@@ -8,9 +8,19 @@ authorizations = {
     }
 }
 
+
 class RoleDto:
     api = Namespace('roles', authorizations=authorizations, description='Role related operations')
 
     RolePost = api.model('RolePost', {
         'role': fields.String()
+    })
+
+    RoleGetAll = api.model('RoleGetAll', {
+        'publicId': fields.String,
+        'role': fields.String()
+    })
+
+    RoleId = api.model('RoleId', {
+        'publicId': fields.String,
     })
